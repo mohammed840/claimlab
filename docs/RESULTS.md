@@ -39,3 +39,11 @@ python3 -m unittest -v test_pipeline.py
 For the container replay, install Harbor 0.3.0 and start Docker, then run `python3 eval_harbor.py`. Fresh OpenAI inference is separate, paid, and can produce different results.
 
 The historical five-case baseline in the dashboard has different fixtures and is not a directly comparable evaluation.
+
+## Combined workflow rubric (retrospective)
+
+The original Luna verdict metric remains **10/15 (66.7%)**. A separate assistant-authored interview audit rates Astra **13/15 (86.7%)** for obtaining material information or eliciting uncertainty. Equal weighting gives a **76.7% workflow index**. This is not a new verdict-accuracy result or an independently validated score.
+
+Interview failures: `auto-disputed-actor` (no question seeking available witness accounts) and `property-smoke-uncertain` (no targeted source-context question). Criteria, policy references and supporting turns are recorded in [interview_rubric.json](../interview_rubric.json). Criteria were written after viewing the run; new runs require fresh review, and independent expert validation remains outstanding.
+
+Run `python3 eval_harbor.py` followed by `python3 workflow_eval.py`. Harbor replays Luna labels; the second command attaches the transparent interview audit and combined arithmetic to the summary. No voice-quality or semantic-explanation score is claimed.

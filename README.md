@@ -162,3 +162,29 @@ This requires all 15 saved cases, stages the refresh, and switches the dashboard
 - Prepared this reproducible saved demo, per-case results, sample fixtures and evaluation commands.
 
 **Concrete Codex contribution:** Codex implemented the Realtime WebSocket migration and staged voice-refresh command, added focused protocol checks, then used the authorized API run to generate the media. Wording validation rejected a paraphrased camera-theft sentence; the clip was regenerated without altering the evidence or benchmark outcomes.
+
+## Rubric design: Luna + Astra workflow
+
+The combined score evaluates **Luna’s final verdict and Astra’s interview completeness**, including the questions heard in the recorded conversation. It does not evaluate the speech model’s sound, emotion or pronunciation.
+
+| Component | Weight | Reward 1 | Reward 0 |
+| --- | ---: | --- | --- |
+| Luna verdict correctness | 50% | Decisions label matches the fixed expected label. | Label differs, including unnecessary escalation. |
+| Astra interview completeness | 50% | The case-specific material facts are supplied in the opening or Astra asks the relevant follow-up. An honest “unknown” answer counts as elicited uncertainty. | A required evidence-gathering question is omitted. |
+
+**Per-case workflow score = 0.5 × Luna reward + 0.5 × Astra reward.** Average this over the 15 cases. A case can score 0%, 50% or 100%. This is a chosen demo workflow index, not coverage accuracy or an estimate of production safety. A correct interview cannot erase a wrong verdict: the component scores remain visible.
+
+The [interview rubric](interview_rubric.json) contains one case-specific completeness criterion, policy reference, cited interview turns, rating and rationale per case. These ratings are a **retrospective assistant-authored audit**, written after viewing the saved run—not independent expert annotations or an automated semantic judge. Passing citation-ID and source-freshness checks does not prove the audit judgment correct. Freeze and independently review criteria before evaluating a new held-out set; changed interviews/policies invalidate these ratings.
+
+For example, the camera-theft case earns Astra credit for asking about the police report and whether lock damage was new. The disputed-actor case loses interview credit because witness information was not sought. The uncertain-smoke case loses credit under this rubric because no targeted source-context question was asked. Cases with sufficient opening accounts do not need redundant questions.
+
+Reproduce the combined evaluation (Docker/Harbor required for the first command):
+
+```sh
+python3 eval_harbor.py
+python3 workflow_eval.py
+```
+
+To recompute the combined report using the included completed Harbor replay, run only `python3 workflow_eval.py`. This makes no model calls. Harbor verifies Luna’s saved label; the second command combines that verified reward with the recorded Astra audit. Harbor is **not** independently judging the conversation. A new Harbor run replaces the summary, so rerun the second command afterward.
+
+Current retrospective results: **Luna 10/15 (66.7%)**, **Astra interview 13/15 (86.7%)**, **combined 76.7%**. This does not replace or improve the original 66.7% verdict accuracy. No model outputs or expected labels were changed. The dashboard displays both components, the overall index and the per-case audit evidence.

@@ -178,6 +178,25 @@ class PipelineAdjudicationTests(unittest.TestCase):
             )
 
 
+class WorkflowRubricTests(unittest.TestCase):
+    def test_combined_scores_and_stale_interview(self):
+        import copy
+        import workflow_eval
+        root = Path(__file__).resolve().parent
+        results = json.loads((root / 'public/data/results.json').read_text())
+        decisions = json.loads((root / 'public/data/decisions.json').read_text())
+        harbor = json.loads((root / 'public/data/harbor-summary.json').read_text())
+        rubric = json.loads((root / 'interview_rubric.json').read_text())
+        report = workflow_eval.evaluate(results, decisions, harbor, rubric)
+        self.assertAlmostEqual(report['luna_score'], 10 / 15)
+        self.assertAlmostEqual(report['astra_score'], 13 / 15)
+        self.assertAlmostEqual(report['overall_score'], 23 / 30)
+        changed = copy.deepcopy(results)
+        changed['tasks'][0]['transcript'][0]['text'] = 'Changed evidence'
+        with self.assertRaisesRegex(ValueError, 'Stale interview audit'):
+            workflow_eval.evaluate(changed, decisions, harbor, rubric)
+
+
 class RealtimeSpeechTests(unittest.TestCase):
     class FakeSocket:
         def __init__(self, events):

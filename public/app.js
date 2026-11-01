@@ -257,6 +257,23 @@
     elements.modelsStrip.hidden = false;
   }
 
+  function currentWorkflow() {
+    if (state.view !== 'current') return null;
+    const workflow = state.harborSummary?.workflow;
+    const tasks = resultsTasks();
+    if (!workflow || workflow.tasks?.length !== tasks.length) return null;
+    const valid = tasks.every(task => {
+      const audit = workflow.tasks.find(item => item.id === task.id);
+      const luna = lunaResult(task);
+      const interview = (task.transcript || []).filter(turn => turn.phase !== 'decision')
+        .map(({id, speaker, text, phase}) => ({id, speaker, text, phase}));
+      return audit && luna && JSON.stringify(audit.source_interview) === JSON.stringify(interview)
+        && JSON.stringify(audit.source_policy) === JSON.stringify(task.policy)
+        && audit.luna_score === Number(luna.verdict === task.expected?.verdict);
+    });
+    return valid ? workflow : null;
+  }
+
   function renderHarbor() {
     const summary = state.harborSummary;
     elements.harborStatus.className = 'harbor-status';
@@ -324,6 +341,15 @@
       );
       elements.harborTaskList.append(item);
     });
+    const workflow = isComplete ? currentWorkflow() : null;
+    if (workflow) {
+      document.querySelector('.harbor-copy strong').textContent = 'Combined workflow · Harbor + interview audit';
+      elements.harborDescription.textContent = 'Luna verdict replay + retrospective Astra interview audit · equal weights';
+      elements.harborPassed.textContent = `Overall ${(workflow.overall_score * 100).toFixed(1)}%`;
+      elements.harborScore.textContent = `Luna ${(workflow.luna_score * 100).toFixed(1)}% · Astra interview ${(workflow.astra_score * 100).toFixed(1)}%`;
+      const note = node('p', 'pending-copy', 'Combined score is a workflow index, not verdict accuracy. Astra ratings are assistant-authored after inspecting this run; not expert validated. Voice sound quality is not scored.');
+      elements.harborTaskList.append(note);
+    }
     elements.harborTaskDetails.hidden = tasks.length === 0;
     elements.harborResults.hidden = false;
   }
@@ -457,6 +483,19 @@
       grid.append(apiCard);
     }
     grid.append(actualCard);
+    const interviewAudit = currentWorkflow()?.tasks.find(item => item.id === task.id);
+    if (interviewAudit) {
+      const auditCard = node('div', 'comparison-card');
+      auditCard.append(node('h4', '', 'Combined workflow rubric'));
+      appendComparisonField(auditCard, 'Overall · equal weights', `${interviewAudit.overall_score * 100}%`, '');
+      appendComparisonField(auditCard, 'Luna verdict', `${interviewAudit.luna_score} / 1`, '');
+      appendComparisonField(auditCard, 'Astra interview completeness', `${interviewAudit.astra_score} / 1`, '');
+      appendComparisonField(auditCard, 'Required interview evidence', interviewAudit.criterion, '');
+      appendComparisonField(auditCard, 'Audit rationale', interviewAudit.rationale, '');
+      appendComparisonField(auditCard, 'References', `${interviewAudit.policy_clause} · ${interviewAudit.evidence_turn_ids.join(', ')}`, '');
+      auditCard.append(node('p', 'pending-copy', 'Retrospective assistant audit, not expert-validated or a voice-quality score.'));
+      grid.append(auditCard);
+    }
     card.append(grid);
     parent.append(card);
   }
