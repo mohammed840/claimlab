@@ -1,0 +1,6 @@
+{
+  "model": "gpt-realtime-2.1-mini",
+  "voice": "marin",
+  "script": "Hi, I’m calling to report that an electrical surge damaged my laptop. It won’t turn on, and there’s a small scorched area beside the charging port; a technician confirmed the damage is confined to the internal circuitry.",
+  "transcript": "Hi, I’m calling to report that an electrical surge damaged my laptop. It won’t turn on, and there’s a small scorched area beside the charging port; a technician confirmed the damage is confined to the internal circuitry."
+}

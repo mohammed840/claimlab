@@ -1,0 +1,683 @@
+[
+  {
+    "id": "auto-collision",
+    "title": "Rear-end collision",
+    "category": "auto",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated claim illustration",
+    "image_prompt": "Create a realistic but clearly fictional insurance claim illustration: two ordinary passenger cars after a low-speed rear-end collision at a city traffic light, visible front bumper damage on the rear car, daylight, no people, no logos, no license plate text, no readable text, neutral documentary photo style.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "For this synthetic case, assume the vehicle is shown on the declarations, the loss occurs during the policy period, and collision coverage and premium are in force.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-COLL",
+        "text": "If collision coverage is purchased, direct accidental loss to a covered vehicle caused by collision with another object or overturning is covered, subject to the applicable limit and deductible.",
+        "source_section": "Part D — Insuring Agreement: Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-INTENT",
+        "text": "The policy excludes loss resulting from intentional acts of the insured or family member.",
+        "source_section": "Part D — Exclusions 16",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A 2022 fictional midsize sedan",
+      "incident": "The insured car struck the rear of another car while approaching a traffic light.",
+      "damage": "The front bumper and hood are dented; the repair estimate is $2,800.",
+      "other_facts": "The insured driver was driving, no one was injured, and the damage was accidental."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-AUTO-D-COLL"
+      ],
+      "rationale": "Under the stated fictional declarations assumption, the reported accidental collision meets the collision insuring agreement, subject to the complete policy and investigation."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    }
+  },
+  {
+    "id": "auto-flood",
+    "title": "Flooded parked car",
+    "category": "auto",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated claim illustration",
+    "image_prompt": "Create a realistic but clearly fictional insurance claim illustration: an ordinary passenger car parked in an underground garage after floodwater rose to the lower doors, muddy water and damp floor, overcast lighting, no people, no logos, no license plate text, no readable text, neutral documentary photo style.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "For this synthetic case, assume the vehicle is on the declarations, the loss occurs during the policy period, and other-than-collision coverage and premium are in force.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-OTC",
+        "text": "If other-than-collision coverage is purchased, the policy covers loss to a covered vehicle, subject to the applicable limit and declarations deductible.",
+        "source_section": "Part D — Insuring Agreement: Other Than Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-FLOOD",
+        "text": "The policy lists water and flood among causes of loss treated as other than collision.",
+        "source_section": "Part D — Other Than Collision, item 5",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A 2021 fictional compact SUV",
+      "incident": "The car was parked in an underground garage during a heavy rainstorm; floodwater rose around it.",
+      "damage": "Water reached the floorboards, the car will not start, and the repair estimate is $6,200.",
+      "other_facts": "There was no collision, fire, or intentional act."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-AUTO-D-OTC",
+        "CA-AUTO-D-FLOOD"
+      ],
+      "rationale": "The historical form lists flood as other-than-collision loss. The label assumes that coverage is purchased and in force; it is not a real claim determination."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    }
+  },
+  {
+    "id": "auto-vandalism",
+    "title": "Vandalism while parked",
+    "category": "auto",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated claim illustration",
+    "image_prompt": "Create a realistic but clearly fictional insurance claim illustration: a parked ordinary sedan in a quiet public lot with a scratched door, a small broken side window, and a little non-legible paint mark, morning daylight, no people, no logos, no license plate text, no readable text, neutral documentary photo style.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "For this synthetic case, assume the vehicle is on the declarations, the loss occurs during the policy period, and other-than-collision coverage and premium are in force.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-OTC",
+        "text": "If other-than-collision coverage is purchased, the policy covers loss to a covered vehicle, subject to the applicable limit and declarations deductible.",
+        "source_section": "Part D — Insuring Agreement: Other Than Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-VAND",
+        "text": "Malicious mischief or vandalism, and glass breakage other than from collision, are listed as other-than-collision causes of loss.",
+        "source_section": "Part D — Other Than Collision, items 6 and 9",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-INTENT",
+        "text": "The policy excludes loss resulting from intentional acts of the insured or family member.",
+        "source_section": "Part D — Exclusions 16",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A 2023 fictional midsize sedan",
+      "incident": "The car was parked overnight in a public lot; the next morning the owner found a scratched door and broken side window.",
+      "damage": "The repair estimate is $1,400.",
+      "other_facts": "The owner did not cause the damage, no authorized driver had the car, and a police report was filed."
+    },
+    "expected": {
+      "verdict": "needs_review",
+      "clause_ids": [
+        "CA-AUTO-D-OTC"
+      ],
+      "rationale": "Damage is reported, but its cause and intent are unknown. The form lists vandalism and glass breakage; further review of cause and applicable terms is a cautious benchmark label rather than a confirmed coverage determination."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    }
+  },
+  {
+    "id": "home-stolen-laptop",
+    "title": "Laptop stolen away from home",
+    "category": "property",
+    "has_image": false,
+    "image_label": "Synthetic static claim card",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "For this synthetic case, assume personal property coverage is in force under the sample renters form and the laptop is personal property, subject to the actual policy terms and deductible.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-HO4-THEFT",
+        "text": "The sample forcible-entry theft endorsement replaces the base theft peril: covered theft requires forcible entry with visible physical damage at the point of entry, and a police report. It also lists exclusions, including theft by an insured and certain off-premises property.",
+        "source_section": "GC HO4-FE 03 26 — Section I, Perils Insured Against, 9. Theft",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      },
+      {
+        "id": "CA-HO4-DUTIES",
+        "text": "After a loss, the insured must give prompt notice, notify police for theft, protect property, and cooperate; the form conditions lack of coverage on a prejudicial failure to comply.",
+        "source_section": "HO 00 04 05 11 — Section I, Conditions C. Duties After Loss",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional renter's personal property policy",
+      "incident": "An $850 laptop was stolen from a locked library locker during a 30-minute visit.",
+      "damage": "The laptop has not been recovered.",
+      "other_facts": "The owner filed a police report the same afternoon; reference number FIC-2048."
+    },
+    "expected": {
+      "verdict": "needs_review",
+      "clause_ids": [
+        "CA-HO4-THEFT"
+      ],
+      "rationale": "A police report is described, but the scenario does not say whether the locked locker had visible damage from forcible entry. The sample contains multiple theft-related endorsements; their application also requires review."
+    },
+    "policy_source": {
+      "title": "Goodcover California renters sample, HO 00 04 05 11 and listed endorsements",
+      "url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf",
+      "note": "Public sample, not a policy issued to the fictional claimant. Terms below paraphrase selected sections and endorsements; the sample contains multiple endorsements, whose interaction may need review."
+    }
+  },
+  {
+    "id": "home-delayed-claim",
+    "title": "Late notice after a water leak",
+    "category": "property",
+    "has_image": false,
+    "image_label": "Synthetic static claim card",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "For this synthetic case, assume the renters personal-property coverage and sample form are in force when the loss occurs; other terms, endorsements, and proof remain subject to review.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-HO4-WATER",
+        "text": "The base form lists accidental discharge or overflow from a plumbing system as an insured peril, subject to listed exclusions and endorsements.",
+        "source_section": "HO 00 04 05 11 — Section I, Perils Insured Against 12",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      },
+      {
+        "id": "CA-HO4-NOTICE",
+        "text": "The insured must give prompt notice after loss; the base form says the insurer has no duty to provide coverage if a failure to comply with listed duties is prejudicial to it.",
+        "source_section": "HO 00 04 05 11 — Section I, Conditions C. Duties After Loss",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional renter's personal property policy",
+      "incident": "A supply pipe burst and leaked onto the kitchen floor while the renter was away.",
+      "damage": "The renter discovered water damage to personal property after returning home.",
+      "other_facts": "The renter reported the loss 44 days after discovery because they were hospitalized for most of that period; the amount and cause of damage still need inspection."
+    },
+    "expected": {
+      "verdict": "needs_review",
+      "clause_ids": [
+        "CA-HO4-NOTICE"
+      ],
+      "rationale": "The sample calls for prompt notice and addresses prejudicial failure; it does not establish the former fictional 30-day rule. The 44-day delay, its impact, and applicable endorsements require investigation."
+    },
+    "policy_source": {
+      "title": "Goodcover California renters sample, HO 00 04 05 11 and listed endorsements",
+      "url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf",
+      "note": "Public sample, not a policy issued to the fictional claimant. Terms below paraphrase selected sections and endorsements; the sample contains multiple endorsements, whose interaction may need review."
+    }
+  },
+  {
+    "id": "auto-animal-contact",
+    "title": "Animal contact on a dark road",
+    "category": "auto",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated claim illustration",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: listed vehicle, active policy at loss, only other-than-collision physical-damage coverage purchased; no collision coverage.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-OTC",
+        "text": "If other-than-collision coverage is purchased, the policy covers loss to a covered vehicle, subject to the applicable limit and declarations deductible.",
+        "source_section": "Part D — Insuring Agreement: Other Than Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-ANIMAL",
+        "text": "Direct contact with a bird or animal is classified as other-than-collision loss.",
+        "source_section": "Part D — Other Than Collision, item 8",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-COLL",
+        "text": "If collision coverage is purchased, direct accidental loss to a covered vehicle caused by collision with another object or overturning is covered, subject to the applicable limit and deductible.",
+        "source_section": "Part D — Insuring Agreement: Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional insured passenger car",
+      "incident": "A deer ran into my moving car; I felt direct contact and stopped without striking anything else.",
+      "damage": "The front fender is dented.",
+      "other_facts": "Personal trip; no intentional damage."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-AUTO-D-ANIMAL"
+      ],
+      "rationale": "Direct animal contact falls under purchased other-than-collision coverage despite everyday use of the word collision."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    },
+    "challenge": "Animal contact versus collision terminology",
+    "image_prompt": "Fictional insurance documentary photograph, no people, logos, readable text or license numbers. A parked sedan with a dented front fender, no animal visible; no evidence of what caused the dent."
+  },
+  {
+    "id": "auto-animal-swerve",
+    "title": "Swerved to avoid an animal",
+    "category": "auto",
+    "has_image": false,
+    "image_label": "Synthetic static claim card",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: listed vehicle, active policy at loss, only other-than-collision physical-damage coverage purchased; no collision coverage.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-OTC",
+        "text": "If other-than-collision coverage is purchased, the policy covers loss to a covered vehicle, subject to the applicable limit and declarations deductible.",
+        "source_section": "Part D — Insuring Agreement: Other Than Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-ANIMAL",
+        "text": "Direct contact with a bird or animal is classified as other-than-collision loss.",
+        "source_section": "Part D — Other Than Collision, item 8",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-COLL",
+        "text": "If collision coverage is purchased, direct accidental loss to a covered vehicle caused by collision with another object or overturning is covered, subject to the applicable limit and deductible.",
+        "source_section": "Part D — Insuring Agreement: Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional insured passenger car",
+      "incident": "I swerved to avoid a deer and hit a guardrail. I never touched the deer.",
+      "damage": "The front fender is dented.",
+      "other_facts": "Personal trip, accidental impact; no other cause of damage."
+    },
+    "expected": {
+      "verdict": "excluded",
+      "clause_ids": [
+        "CA-AUTO-D-COLL"
+      ],
+      "rationale": "Guardrail impact requires collision coverage, which was not purchased; animal proximity does not make it direct animal contact. Excluded here means outside the supplied purchased coverage."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    },
+    "challenge": "Near-identical damage; direct contact changes coverage"
+  },
+  {
+    "id": "auto-owner-intent",
+    "title": "Window broken deliberately by owner",
+    "category": "auto",
+    "has_image": false,
+    "image_label": "Synthetic static claim card",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: listed vehicle, active policy at loss, collision and other-than-collision premiums paid. No other relevant endorsements.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-VAND",
+        "text": "Malicious mischief or vandalism, and glass breakage other than from collision, are listed as other-than-collision causes of loss.",
+        "source_section": "Part D — Other Than Collision, items 6 and 9",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-INTENT",
+        "text": "The policy excludes loss resulting from intentional acts of the insured or family member.",
+        "source_section": "Part D — Exclusions 16",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional insured passenger car",
+      "incident": "I deliberately smashed my own car window with a hammer while angry.",
+      "damage": "The side window is shattered.",
+      "other_facts": "I was not escaping danger; I intended to damage it."
+    },
+    "expected": {
+      "verdict": "excluded",
+      "clause_ids": [
+        "CA-AUTO-D-INTENT"
+      ],
+      "rationale": "Intentional damage by the insured triggers the supplied exclusion even though glass breakage appears in the coverage list."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    },
+    "challenge": "Glass coverage versus explicit intentional-act exclusion"
+  },
+  {
+    "id": "auto-disputed-actor",
+    "title": "Conflicting accounts of broken glass",
+    "category": "auto",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated claim illustration",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: listed vehicle, active policy at loss, collision and other-than-collision premiums paid. No other relevant endorsements.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-OTC",
+        "text": "If other-than-collision coverage is purchased, the policy covers loss to a covered vehicle, subject to the applicable limit and declarations deductible.",
+        "source_section": "Part D — Insuring Agreement: Other Than Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-VAND",
+        "text": "Malicious mischief or vandalism, and glass breakage other than from collision, are listed as other-than-collision causes of loss.",
+        "source_section": "Part D — Other Than Collision, items 6 and 9",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-INTENT",
+        "text": "The policy excludes loss resulting from intentional acts of the insured or family member.",
+        "source_section": "Part D — Exclusions 16",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional insured passenger car",
+      "incident": "I found my window broken. One neighbor says a stranger hit it; another says someone from my household did. I did not see it happen.",
+      "damage": "The side window is shattered.",
+      "other_facts": "Neither account is verified; I do not know the actor or whether it was intentional."
+    },
+    "expected": {
+      "verdict": "needs_review",
+      "clause_ids": [
+        "CA-AUTO-D-INTENT"
+      ],
+      "rationale": "Conflicting accounts leave a potentially applicable intentional-act exclusion unresolved; visible glass damage cannot identify the actor."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    },
+    "challenge": "Image cannot resolve contradictory witness accounts",
+    "image_prompt": "Fictional insurance documentary photograph, no people, logos, readable text or license numbers. Parked sedan with shattered side window and glass fragments; no people, tools or clues identifying who broke it."
+  },
+  {
+    "id": "auto-business-no-surcharge",
+    "title": "Client visit without business surcharge",
+    "category": "auto",
+    "has_image": false,
+    "image_label": "Synthetic static claim card",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: listed vehicle, active policy at loss, collision and other-than-collision premiums paid. No other relevant endorsements. The declarations expressly show no business-use surcharge.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-COLL",
+        "text": "If collision coverage is purchased, direct accidental loss to a covered vehicle caused by collision with another object or overturning is covered, subject to the applicable limit and deductible.",
+        "source_section": "Part D — Insuring Agreement: Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-BUSINESS",
+        "text": "Business use other than farming or ranching is excluded, apart from the listed exception when the declarations show a business-use surcharge and the vehicle is used by the insured, family member, or their partner, agent, or employee. The separate motor-business exclusion still applies.",
+        "source_section": "Part D — Exclusions 9 and 10",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional insured passenger car",
+      "incident": "While driving to a client meeting for my consulting business, I accidentally backed into a post.",
+      "damage": "The rear bumper is dented.",
+      "other_facts": "I am the named insured; no paid transport, delivery, vehicle repair or other motor business was involved."
+    },
+    "expected": {
+      "verdict": "excluded",
+      "clause_ids": [
+        "CA-AUTO-D-BUSINESS"
+      ],
+      "rationale": "The selected historical form excludes the stated business use without its declarations surcharge exception."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    },
+    "challenge": "Business purpose despite ordinary-looking collision"
+  },
+  {
+    "id": "auto-business-surcharge",
+    "title": "Same client visit, surcharge present",
+    "category": "auto",
+    "has_image": false,
+    "image_label": "Synthetic static claim card",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: listed vehicle, active policy at loss, collision and other-than-collision premiums paid. No other relevant endorsements. The declarations expressly include a business-use surcharge for this vehicle.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-COLL",
+        "text": "If collision coverage is purchased, direct accidental loss to a covered vehicle caused by collision with another object or overturning is covered, subject to the applicable limit and deductible.",
+        "source_section": "Part D — Insuring Agreement: Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-BUSINESS",
+        "text": "Business use other than farming or ranching is excluded, apart from the listed exception when the declarations show a business-use surcharge and the vehicle is used by the insured, family member, or their partner, agent, or employee. The separate motor-business exclusion still applies.",
+        "source_section": "Part D — Exclusions 9 and 10",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional insured passenger car",
+      "incident": "While driving to a client meeting for my consulting business, I accidentally backed into a post.",
+      "damage": "The rear bumper is dented.",
+      "other_facts": "I am the named insured; no paid transport, delivery, vehicle repair or other motor business was involved."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-AUTO-D-COLL",
+        "CA-AUTO-D-BUSINESS"
+      ],
+      "rationale": "The stated surcharge and named-insured use satisfy the business-use exception; accidental collision remains covered."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    },
+    "challenge": "Counterfactual pair: declarations exception flips outcome"
+  },
+  {
+    "id": "property-laptop-surge",
+    "title": "Laptop circuit damage after a surge",
+    "category": "property",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated property claim illustration",
+    "image_prompt": "Realistic fictional insurance documentation photograph. No people, readable text, logos, or paperwork. Laptop on a desk, closed unlit screen, small blackened patch beside the charging port; show no flames or exposed circuit boards.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: renters Coverage C is active for the insured personal belongings at this occupied primary residence at the time of loss. Selected form terms below govern this benchmark; no other modifying endorsement is assumed. ",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-HO4-CURRENT",
+        "text": "Sudden accidental damage from artificially generated electrical current is a listed peril, but it does not cover damage to electronic components or circuitry within computers or other electronic apparatus.",
+        "source_section": "HO 00 04 05 11 — Section I, Perils Insured Against 15",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      }
+    ],
+    "policy_source": {
+      "title": "Goodcover California renters sample, HO 00 04 05 11 and listed endorsements",
+      "url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf",
+      "note": "Public software-testing sample explicitly marked not a valid insurance policy. Selected real form provisions are paraphrased for synthetic cases; declarations and endorsement applicability below are fictional assumptions, not insurer-issued coverage."
+    },
+    "claimant_facts": {
+      "insured_item": "Fictional renter’s personal belongings",
+      "incident": "An electrical surge damaged my laptop. A technician confirmed that damage is confined to its internal electronic circuitry.",
+      "damage": "The laptop will not turn on; there is a small scorched area beside its charging port.",
+      "other_facts": "There was no fire, lightning strike, theft, water or damage to other parts; the technician’s diagnosis is final."
+    },
+    "expected": {
+      "verdict": "excluded",
+      "clause_ids": [
+        "CA-HO4-CURRENT"
+      ],
+      "rationale": "The supplied electrical-current peril expressly excludes computer circuitry. Sudden damage alone does not establish coverage."
+    },
+    "challenge": "Visible scorching versus a component-specific exclusion"
+  },
+  {
+    "id": "property-burst-pipe-belongings",
+    "title": "Burst pipe soaked personal belongings",
+    "category": "property",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated property claim illustration",
+    "image_prompt": "Realistic fictional insurance documentation photograph. No people, readable text, logos, or paperwork. Living room with wet swollen books on a low shelf, dark saturated rug and stained fabric chair; small puddle, no people, no car.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: renters Coverage C is active for the insured personal belongings at this occupied primary residence at the time of loss. Selected form terms below govern this benchmark; no other modifying endorsement is assumed. ",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-HO4-WATER-CONTENTS",
+        "text": "Accidental discharge from a plumbing system or household appliance is a listed peril for covered personal property. The leaking system or appliance itself is not covered by this peril; other listed restrictions still apply.",
+        "source_section": "HO 00 04 05 11 — Section I, Perils Insured Against 12",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      }
+    ],
+    "policy_source": {
+      "title": "Goodcover California renters sample, HO 00 04 05 11 and listed endorsements",
+      "url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf",
+      "note": "Public software-testing sample explicitly marked not a valid insurance policy. Selected real form provisions are paraphrased for synthetic cases; declarations and endorsement applicability below are fictional assumptions, not insurer-issued coverage."
+    },
+    "claimant_facts": {
+      "insured_item": "Fictional renter’s personal belongings",
+      "incident": "A supply pipe suddenly burst while I was home and soaked my own books, rug and fabric chair. I saw water spraying from the broken pipe.",
+      "damage": "Books are swollen and wet, the rug is saturated, and the chair upholstery has water stains.",
+      "other_facts": "I shut off the water and reported it immediately. No freezing, mold, external flood or gradual seepage was involved. I claim only my belongings, not pipe repair or building damage."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-HO4-WATER-CONTENTS"
+      ],
+      "rationale": "Direct damage to covered belongings from the stated sudden plumbing discharge meets the selected peril; the leaking pipe itself is not claimed."
+    },
+    "challenge": "Contents versus excluded pipe repair; photo does not establish cause"
+  },
+  {
+    "id": "property-smoke-uncertain",
+    "title": "Soot on furniture, source uncertain",
+    "category": "property",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated property claim illustration",
+    "image_prompt": "Realistic fictional insurance documentation photograph. No people, readable text, logos, or paperwork. Indoor fabric sofa and curtains with dark gray soot deposits, no active fire, smoke source or industrial facility visible.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: renters Coverage C is active for the insured personal belongings at this occupied primary residence at the time of loss. Selected form terms below govern this benchmark; no other modifying endorsement is assumed. ",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-HO4-SMOKE",
+        "text": "Smoke coverage applies to sudden accidental smoke damage, including furnace puffback; smoke from agricultural smudging or industrial operations is not covered by this peril.",
+        "source_section": "HO 00 04 05 11 — Section I, Perils Insured Against 7",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      }
+    ],
+    "policy_source": {
+      "title": "Goodcover California renters sample, HO 00 04 05 11 and listed endorsements",
+      "url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf",
+      "note": "Public software-testing sample explicitly marked not a valid insurance policy. Selected real form provisions are paraphrased for synthetic cases; declarations and endorsement applicability below are fictional assumptions, not insurer-issued coverage."
+    },
+    "claimant_facts": {
+      "insured_item": "Fictional renter’s personal belongings",
+      "incident": "I returned home to find soot on my sofa and curtains. I did not see when or how it happened.",
+      "damage": "There are dark soot marks on the fabric.",
+      "other_facts": "The furnace had not been inspected, and an industrial operation is nearby. I do not know whether either caused the soot or whether it happened suddenly. No witness or inspection has established the cause."
+    },
+    "expected": {
+      "verdict": "needs_review",
+      "clause_ids": [
+        "CA-HO4-SMOKE"
+      ],
+      "rationale": "The source and sudden accidental nature remain unknown, and an expressly excluded smoke source is possible. Visible soot alone cannot resolve applicability."
+    },
+    "challenge": "Image shows soot but cannot distinguish furnace puffback from industrial emissions"
+  },
+  {
+    "id": "property-forced-entry-report-unknown",
+    "title": "Damaged lock after reported theft",
+    "category": "property",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated property claim illustration",
+    "image_prompt": "Realistic fictional insurance documentation photograph. No people, readable text, logos, or paperwork. Close view of a splintered apartment door frame around a damaged lock; part of an empty shelf visible behind the door. No intruder or police paperwork.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: renters Coverage C is active for the insured personal belongings at this occupied primary residence at the time of loss. Selected form terms below govern this benchmark; no other modifying endorsement is assumed. For this case assume GC HO4-FE 03 26 controls the theft peril and no conflicting theft endorsement applies.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-HO4-FORCE",
+        "text": "The forcible-entry theft endorsement requires visible physical damage at the point of forced entry and a police report. Theft by an insured and unexplained disappearance are excluded. Other listed restrictions apply.",
+        "source_section": "GC HO4-FE 03 26 — Section I, Perils Insured Against 9",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      }
+    ],
+    "policy_source": {
+      "title": "Goodcover California renters sample, HO 00 04 05 11 and listed endorsements",
+      "url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf",
+      "note": "Public software-testing sample explicitly marked not a valid insurance policy. Selected real form provisions are paraphrased for synthetic cases; declarations and endorsement applicability below are fictional assumptions, not insurer-issued coverage."
+    },
+    "claimant_facts": {
+      "insured_item": "Fictional renter’s personal belongings",
+      "incident": "I came home to find my door lock splintered and my camera missing from its usual shelf.",
+      "damage": "The door frame is splintered around the lock and the shelf is empty.",
+      "other_facts": "I believe someone broke in, but I did not see who. My housemate said they would contact police; I cannot confirm whether a police report was actually filed. No one has confirmed the report status."
+    },
+    "expected": {
+      "verdict": "needs_review",
+      "clause_ids": [
+        "CA-HO4-FORCE"
+      ],
+      "rationale": "Visible forced-entry damage supports one prerequisite but does not establish that the required police report was filed. Its status needs verification."
+    },
+    "challenge": "Visible entry damage versus a missing nonvisual prerequisite"
+  }
+]

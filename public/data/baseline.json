@@ -1,0 +1,402 @@
+{
+  "status": "complete",
+  "models": {
+    "claimant": "gpt-6-luna",
+    "adjudicator": "gpt-6-astra",
+    "image": "gpt-image-2",
+    "voice": "gpt-4o-mini-tts"
+  },
+  "tasks": [
+    {
+      "id": "auto-collision",
+      "title": "Rear-end collision",
+      "category": "auto",
+      "has_image": true,
+      "image_label": "Synthetic AI-generated claim illustration",
+      "status": "complete",
+      "policy": [
+        {
+          "id": "AUTO-COLL-1",
+          "text": "Collision coverage pays for sudden physical damage when the insured car collides with another vehicle or object, subject to a $500 deductible."
+        },
+        {
+          "id": "AUTO-COLL-2",
+          "text": "Collision coverage excludes intentional damage and ordinary mechanical breakdown."
+        }
+      ],
+      "claimant_facts": {
+        "insured_item": "A 2022 fictional midsize sedan",
+        "incident": "The insured car struck the rear of another car while approaching a traffic light.",
+        "damage": "The front bumper and hood are dented; the repair estimate is $2,800.",
+        "other_facts": "The insured driver was driving, no one was injured, and the damage was accidental."
+      },
+      "expected": {
+        "verdict": "covered",
+        "clause_ids": [
+          "AUTO-COLL-1"
+        ]
+      },
+      "decision": {
+        "verdict": "covered",
+        "reason": "The accidental collision damage is covered subject to the $500 deductible, and the supplied clauses impose no collision-date requirement.",
+        "clause_ids": [
+          "AUTO-COLL-1",
+          "AUTO-COLL-2"
+        ],
+        "confidence": 1.0
+      },
+      "transcript": [
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "While approaching a traffic light, I accidentally struck the rear of another car while driving the 2022 fictional midsize sedan. The front bumper and hood were dented, with an estimated repair cost of $2,800; no one was injured.",
+          "audio": "/media/auto-collision/turn_1_808242fd163f.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "On what date did the collision occur?",
+          "audio": "/media/auto-collision/turn_2_91cff27b548e.wav"
+        },
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "I don’t know the date of the collision.",
+          "audio": "/media/auto-collision/turn_3_aab92f73a188.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Decision: covered. The accidental collision damage is covered subject to the $500 deductible, and the supplied clauses impose no collision-date requirement. Relevant clauses: AUTO-COLL-1, AUTO-COLL-2. Confidence: 1.00.",
+          "audio": "/media/auto-collision/turn_4_c4deffa79cae.wav"
+        }
+      ],
+      "image": "/media/auto-collision/claim_122c68ae41.png",
+      "video": "/media/auto-collision/conversation.mp4",
+      "metrics": {
+        "verdict_correct": true,
+        "clause_correct": true,
+        "score": 1.0,
+        "latency_seconds": 99.28
+      },
+      "error": null,
+      "scenario_hash": "45c2cbde14c060c35a5b3fd04ad9df74f8ac5e177a514e66ed519c5ff1f65119",
+      "captions": "/media/auto-collision/captions.vtt"
+    },
+    {
+      "id": "auto-flood",
+      "title": "Flooded parked car",
+      "category": "auto",
+      "has_image": true,
+      "image_label": "Synthetic AI-generated claim illustration",
+      "status": "complete",
+      "policy": [
+        {
+          "id": "AUTO-COMP-1",
+          "text": "Comprehensive coverage pays for sudden accidental damage to the insured car from events such as fire, theft, hail, or falling objects."
+        },
+        {
+          "id": "AUTO-COMP-2",
+          "text": "Damage caused by floodwater or other surface-water inundation is excluded, even when the car was parked and the event was accidental."
+        }
+      ],
+      "claimant_facts": {
+        "insured_item": "A 2021 fictional compact SUV",
+        "incident": "The car was parked in an underground garage during a heavy rainstorm; floodwater rose around it.",
+        "damage": "Water reached the floorboards, the car will not start, and the repair estimate is $6,200.",
+        "other_facts": "There was no collision, fire, or intentional act."
+      },
+      "expected": {
+        "verdict": "excluded",
+        "clause_ids": [
+          "AUTO-COMP-2"
+        ]
+      },
+      "decision": {
+        "verdict": "excluded",
+        "reason": "The reported floodwater damage is expressly excluded even when the car was parked and the flooding was accidental.",
+        "clause_ids": [
+          "AUTO-COMP-2"
+        ],
+        "confidence": 0.98
+      },
+      "transcript": [
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "My 2021 fictional compact SUV was parked in an underground garage during a heavy rainstorm, and floodwater rose around it. Water reached the floorboards, the car won’t start, and the repair estimate is $6,200; there was no collision, fire, or intentional act.",
+          "audio": "/media/auto-flood/turn_1_61ee96aa3cd5.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Has a mechanic confirmed whether floodwater caused the car’s failure to start?",
+          "audio": "/media/auto-flood/turn_2_e66314796b75.wav"
+        },
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "I don’t know; the facts don’t say whether a mechanic confirmed the cause.",
+          "audio": "/media/auto-flood/turn_3_9bb80a1641a6.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Decision: excluded. The reported floodwater damage is expressly excluded even when the car was parked and the flooding was accidental. Relevant clauses: AUTO-COMP-2. Confidence: 0.98.",
+          "audio": "/media/auto-flood/turn_4_32fbce3a1a80.wav"
+        }
+      ],
+      "image": "/media/auto-flood/claim_516a4ff7bd.png",
+      "video": "/media/auto-flood/conversation.mp4",
+      "metrics": {
+        "verdict_correct": true,
+        "clause_correct": true,
+        "score": 1.0,
+        "latency_seconds": 105.22
+      },
+      "error": null,
+      "scenario_hash": "5a868b34c530cdcf345a87eaa7e7e387a56a6366fb4c00ebb68ee1ae87048d38",
+      "captions": "/media/auto-flood/captions.vtt"
+    },
+    {
+      "id": "auto-vandalism",
+      "title": "Vandalism while parked",
+      "category": "auto",
+      "has_image": true,
+      "image_label": "Synthetic AI-generated claim illustration",
+      "status": "complete",
+      "policy": [
+        {
+          "id": "AUTO-COMP-3",
+          "text": "Comprehensive coverage pays for malicious damage by another person to a stationary insured car, including vandalism, subject to a $250 deductible."
+        },
+        {
+          "id": "AUTO-COMP-4",
+          "text": "This coverage does not apply when the damage was caused by the policyholder or an authorized driver."
+        }
+      ],
+      "claimant_facts": {
+        "insured_item": "A 2023 fictional midsize sedan",
+        "incident": "The car was parked overnight in a public lot; the next morning the owner found a scratched door and broken side window.",
+        "damage": "The repair estimate is $1,400.",
+        "other_facts": "The owner did not cause the damage, no authorized driver had the car, and a police report was filed."
+      },
+      "expected": {
+        "verdict": "covered",
+        "clause_ids": [
+          "AUTO-COMP-3"
+        ]
+      },
+      "decision": {
+        "verdict": "needs_review",
+        "reason": "The damage is documented, but malicious damage by another person has not been established, and the policyholder or authorized-driver exclusion does not apply.",
+        "clause_ids": [
+          "AUTO-COMP-3",
+          "AUTO-COMP-4"
+        ],
+        "confidence": 0.98
+      },
+      "transcript": [
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "My 2023 fictional midsize sedan was parked overnight in a public lot. The next morning, I found a scratched door and a broken side window; the repair estimate is $1,400, I did not cause the damage, no authorized driver had the car, and a police report was filed.",
+          "audio": "/media/auto-vandalism/turn_1_f61738a074df.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Is there any evidence that another person intentionally caused the damage?",
+          "audio": "/media/auto-vandalism/turn_2_011567285906.wav"
+        },
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "I don’t know whether someone intentionally caused the damage; the facts only say that I did not cause it and no authorized driver had the car.",
+          "audio": "/media/auto-vandalism/turn_3_5e99a4494f1c.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Decision: needs_review. The damage is documented, but malicious damage by another person has not been established, and the policyholder or authorized-driver exclusion does not apply. Relevant clauses: AUTO-COMP-3, AUTO-COMP-4. Confidence: 0.98.",
+          "audio": "/media/auto-vandalism/turn_4_b27a28c70e96.wav"
+        }
+      ],
+      "image": "/media/auto-vandalism/claim_a8ade31461.png",
+      "video": "/media/auto-vandalism/conversation.mp4",
+      "metrics": {
+        "verdict_correct": false,
+        "clause_correct": true,
+        "score": 0.5,
+        "latency_seconds": 350.37
+      },
+      "error": null,
+      "scenario_hash": "22fe42c59bb3ae2e5ebd8e69b132ae53c026210ff625682704f28afbc990ad95",
+      "captions": "/media/auto-vandalism/captions.vtt"
+    },
+    {
+      "id": "home-stolen-laptop",
+      "title": "Laptop stolen away from home",
+      "category": "property",
+      "has_image": false,
+      "image_label": "Synthetic static claim card",
+      "status": "complete",
+      "policy": [
+        {
+          "id": "HOME-PP-1",
+          "text": "Personal property theft away from the residence is covered up to $1,000 for each item, subject to a $100 deductible."
+        },
+        {
+          "id": "HOME-PP-2",
+          "text": "For theft away from the residence, the insured must file a police report and provide its reference number."
+        }
+      ],
+      "claimant_facts": {
+        "insured_item": "A fictional renter's personal property policy",
+        "incident": "An $850 laptop was stolen from a locked library locker during a 30-minute visit.",
+        "damage": "The laptop has not been recovered.",
+        "other_facts": "The owner filed a police report the same afternoon; reference number FIC-2048."
+      },
+      "expected": {
+        "verdict": "covered",
+        "clause_ids": [
+          "HOME-PP-1",
+          "HOME-PP-2"
+        ]
+      },
+      "decision": {
+        "verdict": "covered",
+        "reason": "The $850 laptop theft away from home is covered subject to the $100 deductible, and the police report requirement is satisfied; neither supplied clause requires the theft date.",
+        "clause_ids": [
+          "HOME-PP-1",
+          "HOME-PP-2"
+        ],
+        "confidence": 1.0
+      },
+      "transcript": [
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "My $850 laptop was stolen from a locked library locker during a 30-minute visit and has not been recovered. I filed a police report that same afternoon; the reference number is FIC-2048.",
+          "audio": "/media/home-stolen-laptop/turn_1_15b93cdaf93f.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "On what date was the laptop stolen?",
+          "audio": "/media/home-stolen-laptop/turn_2_370049f4c393.wav"
+        },
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "I don’t know the date; I only know the theft happened before I filed the police report that afternoon.",
+          "audio": "/media/home-stolen-laptop/turn_3_5743a5924fbe.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Decision: covered. The $850 laptop theft away from home is covered subject to the $100 deductible, and the police report requirement is satisfied; neither supplied clause requires the theft date. Relevant clauses: HOME-PP-1, HOME-PP-2. Confidence: 1.00.",
+          "audio": "/media/home-stolen-laptop/turn_4_9568e2a4b910.wav"
+        }
+      ],
+      "image": null,
+      "video": "/media/home-stolen-laptop/conversation.mp4",
+      "metrics": {
+        "verdict_correct": true,
+        "clause_correct": true,
+        "score": 1.0,
+        "latency_seconds": 71.09
+      },
+      "error": null,
+      "scenario_hash": "a3f8a209afd8e80a900a1c896c337337ae18de7002376af746f5a8876dd9c9f4",
+      "captions": "/media/home-stolen-laptop/captions.vtt"
+    },
+    {
+      "id": "home-delayed-claim",
+      "title": "Late notice after a water leak",
+      "category": "property",
+      "has_image": false,
+      "image_label": "Synthetic static claim card",
+      "status": "complete",
+      "policy": [
+        {
+          "id": "HOME-WATER-1",
+          "text": "Sudden accidental water damage from a burst household pipe is covered."
+        },
+        {
+          "id": "HOME-NOTICE-1",
+          "text": "The insured should report a loss within 30 days after discovering it."
+        },
+        {
+          "id": "HOME-NOTICE-2",
+          "text": "When notice arrives more than 30 days after discovery, an adjuster must review whether the delay materially prejudiced the investigation; late notice alone does not determine coverage."
+        }
+      ],
+      "claimant_facts": {
+        "insured_item": "A fictional renter's personal property policy",
+        "incident": "A supply pipe burst and leaked onto the kitchen floor while the renter was away.",
+        "damage": "The renter discovered water damage to personal property after returning home.",
+        "other_facts": "The renter reported the loss 44 days after discovery because they were hospitalized for most of that period; the amount and cause of damage still need inspection."
+      },
+      "expected": {
+        "verdict": "needs_review",
+        "clause_ids": [
+          "HOME-NOTICE-2"
+        ]
+      },
+      "decision": {
+        "verdict": "needs_review",
+        "reason": "The burst-pipe loss is potentially covered, but an adjuster must determine whether the 44-day reporting delay materially prejudiced the investigation.",
+        "clause_ids": [
+          "HOME-WATER-1",
+          "HOME-NOTICE-1",
+          "HOME-NOTICE-2"
+        ],
+        "confidence": 0.99
+      },
+      "transcript": [
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "A supply pipe burst and leaked onto my kitchen floor while I was away, and I found water damage to my personal property when I returned. I reported the loss 44 days after discovering it because I was hospitalized for most of that period; the amount and cause of the damage still need inspection.",
+          "audio": "/media/home-delayed-claim/turn_1_ae6f77f75c05.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Were any damaged items discarded or repairs completed before you reported the loss?",
+          "audio": "/media/home-delayed-claim/turn_2_34f9a5a1fa7f.wav"
+        },
+        {
+          "speaker": "Claimant",
+          "model": "gpt-6-luna",
+          "text": "I don’t know whether any damaged items were discarded or repairs were completed before I reported the loss.",
+          "audio": "/media/home-delayed-claim/turn_3_467f98ee78b9.wav"
+        },
+        {
+          "speaker": "Adjuster",
+          "model": "gpt-6-astra",
+          "text": "Decision: needs_review. The burst-pipe loss is potentially covered, but an adjuster must determine whether the 44-day reporting delay materially prejudiced the investigation. Relevant clauses: HOME-WATER-1, HOME-NOTICE-1, HOME-NOTICE-2. Confidence: 0.99.",
+          "audio": "/media/home-delayed-claim/turn_4_b495173be8e0.wav"
+        }
+      ],
+      "image": null,
+      "video": "/media/home-delayed-claim/conversation.mp4",
+      "metrics": {
+        "verdict_correct": true,
+        "clause_correct": true,
+        "score": 1.0,
+        "latency_seconds": 76.48
+      },
+      "error": null,
+      "scenario_hash": "9bd4c1ff2152db6a15453f6f7929f480e12751847f68027db662d3680abd9428",
+      "captions": "/media/home-delayed-claim/captions.vtt"
+    }
+  ],
+  "benchmark": {
+    "completed": 5,
+    "total": 5,
+    "passed": 4,
+    "accuracy": 0.8
+  }
+}

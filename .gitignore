@@ -1,0 +1,18 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+jobs/
+
+.policy-index.json
+policy_corpus.json
+backup/
+harbor_tasks/
+public/data/pre-*.json
+scenarios-pre-*.json
+damage-dashboard.png
+.DS_Store
+# Media is published as a reviewed snapshot, not every regenerated run.
+public/media/

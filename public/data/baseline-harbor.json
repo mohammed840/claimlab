@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "mode": "saved-output replay",
+  "note": "Scores saved decision verdicts and clause IDs only; media and transcripts are not evaluated.",
+  "passed": 4,
+  "total": 5,
+  "score": 0.8,
+  "tasks": [
+    {
+      "id": "auto-collision",
+      "reward": 1.0
+    },
+    {
+      "id": "auto-flood",
+      "reward": 1.0
+    },
+    {
+      "id": "auto-vandalism",
+      "reward": 0.0
+    },
+    {
+      "id": "home-stolen-laptop",
+      "reward": 1.0
+    },
+    {
+      "id": "home-delayed-claim",
+      "reward": 1.0
+    }
+  ],
+  "error": null
+}

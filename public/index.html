@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f8f8">
+    <title>ClaimLab · AI claims benchmark</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#main" aria-label="ClaimLab home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3.5 27 8v7.4c0 6.5-4.5 11.1-11 13.1C9.5 26.5 5 21.9 5 15.4V8l11-4.5Z" stroke="currentColor" stroke-width="1.8"/><path d="m11.2 15.8 3.1 3.1 6.8-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand-copy"><strong>claim<span>lab</span></strong><small>AI EVALUATION</small></span>
+        </a>
+
+        <div class="side-label">WORKSPACE</div>
+        <nav class="side-nav">
+          <a class="nav-item active" href="#benchmark" aria-current="page">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 3.5h5.5V9H3zM11.5 3.5H17V9h-5.5zM3 11h5.5v5.5H3zM11.5 11H17v5.5h-5.5z"/></svg>
+            <span>Benchmark</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="note-icon" aria-hidden="true">✳</span>
+          <div><strong>Synthetic claims</strong><p>AI-generated images and voices</p></div>
+        </div>
+
+        <div class="sidebar-footer"><span class="status-dot"></span> Evaluation environment</div>
+      </aside>
+
+      <main class="main-content" id="main">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Workspace</span><span class="crumb-divider">/</span><strong>Claims benchmark</strong></div>
+          <div class="connection-state" id="connection-state"><span class="status-dot"></span><span id="connection-label">Connecting to results</span></div>
+        </header>
+
+        <div class="page-body" id="benchmark">
+          <section class="page-heading">
+            <div>
+              <div class="eyebrow">CLAIM HANDLING · AGENT EVALUATION</div>
+              <h1>Claims benchmark</h1>
+              <p class="heading-subtitle">Benchmark Luna’s Decisions API verdicts against expected outcomes. Astra conducts the conversation and explains its own assessment.</p>
+            </div>
+            <div class="heading-actions">
+              <label class="run-selector-label" for="run-view">Run view
+                <select id="run-view" aria-label="Select benchmark run">
+                  <option value="current">Current run</option>
+                  <option value="original">Original run</option>
+                </select>
+              </label>
+              <button class="run-button" id="run-button" type="button">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+                <span>Run conversations</span>
+              </button>
+            </div>
+          </section>
+
+          <div class="notice" id="api-notice" role="alert" hidden></div>
+          <div class="run-notice" id="run-notice" role="status" hidden></div>
+
+          <section class="stats-grid" aria-label="Benchmark summary">
+            <article class="stat-card stat-primary">
+              <div class="stat-top"><span>Luna verdict accuracy</span><span class="stat-icon" aria-hidden="true">↗</span></div>
+              <div class="stat-value" id="stat-accuracy">—</div>
+              <div class="stat-foot" id="stat-accuracy-foot">Awaiting benchmark results</div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Luna verdicts scored</span><span class="stat-icon" aria-hidden="true">◷</span></div>
+              <div class="stat-value" id="stat-completed">—</div>
+              <div class="stat-foot">of <span id="stat-total">—</span> evaluation tasks</div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Luna correct verdicts</span><span class="stat-icon" aria-hidden="true">✓</span></div>
+              <div class="stat-value" id="stat-passed">—</div>
+              <div class="stat-foot">Luna verdicts vs expected labels</div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Task records</span><span class="stat-icon" aria-hidden="true">▤</span></div>
+              <div class="stat-value" id="stat-review">—</div>
+              <div class="stat-foot">Returned by the results endpoint</div>
+            </article>
+          </section>
+
+          <section class="models-strip" id="models-strip" aria-label="Models in this benchmark" hidden>
+            <div class="models-heading"><span class="models-kicker">RUN CONFIGURATION</span><strong>Models in this benchmark</strong></div>
+            <div class="model-list" id="model-list"></div>
+          </section>
+
+          <section class="harbor-strip" aria-label="Harbor replay summary">
+            <div class="harbor-mark" aria-hidden="true">H</div>
+            <div class="harbor-copy"><strong>Harbor · Luna verdict replay</strong><span id="harbor-description">Harbor replay pending.</span></div>
+            <div class="harbor-results" id="harbor-results" hidden>
+              <span class="harbor-passed" id="harbor-passed"></span>
+              <span class="harbor-score" id="harbor-score"></span>
+              <details class="harbor-task-details" id="harbor-task-details" hidden>
+                <summary>Task rewards</summary>
+                <div class="harbor-task-list" id="harbor-task-list"></div>
+              </details>
+            </div>
+            <span class="harbor-status" id="harbor-status">Pending</span>
+          </section>
+
+          <section class="review-layout" aria-label="Task review">
+            <div class="task-panel panel">
+              <div class="panel-heading task-panel-heading">
+                <div><div class="section-kicker">CASE FILES</div><h2>Evaluation tasks</h2></div>
+                <span class="task-count" id="task-count">—</span>
+              </div>
+              <div class="task-list" id="task-list" aria-label="Benchmark tasks">
+                <div class="loading-state"><span class="loader" aria-hidden="true"></span><span>Loading task results…</span></div>
+              </div>
+              <div class="task-panel-footer"><span class="footer-dot"></span><span id="task-footer-text">Waiting for benchmark data</span></div>
+            </div>
+
+            <article class="detail-panel panel" id="detail-panel" aria-live="polite">
+              <div class="detail-empty">
+                <div class="empty-art" aria-hidden="true"><span></span><span></span><span></span></div>
+                <h2>Choose a case to review</h2>
+                <p>Task evidence, policy terms, and the benchmark decision will appear here when results are available.</p>
+              </div>
+            </article>
+          </section>
+
+          <section class="limitations-card" aria-labelledby="limitations-title">
+            <div class="section-kicker">SCOPE AND LIMITATIONS</div>
+            <h2 id="limitations-title">Evaluation limitations</h2>
+            <ul>
+              <li>Synthetic claims use selected paraphrases of public California sample policy forms; declarations are fictional and policy terms are not exhaustive.</li><li>Expected labels are illustrative judgments, not expert-reviewed ground truth. One rollout; no held-out validation.</li>
+              <li>Current 15-case set: 5 covered, 4 excluded, 6 requiring review; majority-label baseline 40%. Original five-case baseline: 60%.</li>
+              <li>Luna confidence is not calibrated; refresh its results with the documented command after a new conversation run.</li>
+              <li>Conversations may omit scenario facts. Scores evaluate the conversation and vision-to-decision workflow, not an isolated model; expected labels require expert review.</li>
+              <li>Harbor checks Luna verdict labels only; Astra clause ID checks do not prove semantic support.</li>
+              <li>Images are synthetic; Harbor replays saved Luna outputs and does not make new model calls.</li>
+              <li><a href="https://www.vals.ai/benchmarks/claimbench" target="_blank" rel="noopener noreferrer">ClaimBench</a> is a financial 10-K statement verification reference, not an insurance benchmark. ClaimLab adopts fixed labels, evidence-only reasoning, insufficient-information handling, confidence reporting, and latency reporting, with no equivalent scores.</li>
+            </ul>
+          </section>
+
+          <footer class="page-footer"><span>ClaimLab benchmark</span><span>Synthetic scenarios; this is a demo evaluation, not a production accuracy estimate.</span></footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

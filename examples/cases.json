@@ -1,0 +1,133 @@
+[
+  {
+    "id": "auto-collision",
+    "title": "Rear-end collision",
+    "category": "auto",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated claim illustration",
+    "image_prompt": "Create a realistic but clearly fictional insurance claim illustration: two ordinary passenger cars after a low-speed rear-end collision at a city traffic light, visible front bumper damage on the rear car, daylight, no people, no logos, no license plate text, no readable text, neutral documentary photo style.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "For this synthetic case, assume the vehicle is shown on the declarations, the loss occurs during the policy period, and collision coverage and premium are in force.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-COLL",
+        "text": "If collision coverage is purchased, direct accidental loss to a covered vehicle caused by collision with another object or overturning is covered, subject to the applicable limit and deductible.",
+        "source_section": "Part D — Insuring Agreement: Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-INTENT",
+        "text": "The policy excludes loss resulting from intentional acts of the insured or family member.",
+        "source_section": "Part D — Exclusions 16",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A 2022 fictional midsize sedan",
+      "incident": "The insured car struck the rear of another car while approaching a traffic light.",
+      "damage": "The front bumper and hood are dented; the repair estimate is $2,800.",
+      "other_facts": "The insured driver was driving, no one was injured, and the damage was accidental."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-AUTO-D-COLL"
+      ],
+      "rationale": "Under the stated fictional declarations assumption, the reported accidental collision meets the collision insuring agreement, subject to the complete policy and investigation."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    }
+  },
+  {
+    "id": "auto-business-surcharge",
+    "title": "Same client visit, surcharge present",
+    "category": "auto",
+    "has_image": false,
+    "image_label": "Synthetic static claim card",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: listed vehicle, active policy at loss, collision and other-than-collision premiums paid. No other relevant endorsements. The declarations expressly include a business-use surcharge for this vehicle.",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-AUTO-D-COLL",
+        "text": "If collision coverage is purchased, direct accidental loss to a covered vehicle caused by collision with another object or overturning is covered, subject to the applicable limit and deductible.",
+        "source_section": "Part D — Insuring Agreement: Collision",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      },
+      {
+        "id": "CA-AUTO-D-BUSINESS",
+        "text": "Business use other than farming or ranching is excluded, apart from the listed exception when the declarations show a business-use surcharge and the vehicle is used by the insured, family member, or their partner, agent, or employee. The separate motor-business exclusion still applies.",
+        "source_section": "Part D — Exclusions 9 and 10",
+        "source_url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf"
+      }
+    ],
+    "claimant_facts": {
+      "insured_item": "A fictional insured passenger car",
+      "incident": "While driving to a client meeting for my consulting business, I accidentally backed into a post.",
+      "damage": "The rear bumper is dented.",
+      "other_facts": "I am the named insured; no paid transport, delivery, vehicle repair or other motor business was involved."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-AUTO-D-COLL",
+        "CA-AUTO-D-BUSINESS"
+      ],
+      "rationale": "The stated surcharge and named-insured use satisfy the business-use exception; accidental collision remains covered."
+    },
+    "policy_source": {
+      "title": "Integon Preferred Insurance Company, California Personal Automobile Policy, form CAIP400 (03/01/2006)",
+      "url": "https://nationalgeneral.com/forms_catalog/CAIP400_03012006_CA.pdf",
+      "note": "Historical 2006 form; terms below are short paraphrases of selected sections, not a complete policy. Declarations for this demo are fictional."
+    },
+    "challenge": "Counterfactual pair: declarations exception flips outcome"
+  },
+  {
+    "id": "property-burst-pipe-belongings",
+    "title": "Burst pipe soaked personal belongings",
+    "category": "property",
+    "has_image": true,
+    "image_label": "Synthetic AI-generated property claim illustration",
+    "image_prompt": "Realistic fictional insurance documentation photograph. No people, readable text, logos, or paperwork. Living room with wet swollen books on a low shelf, dark saturated rug and stained fabric chair; small puddle, no people, no car.",
+    "policy": [
+      {
+        "id": "DEMO-DECL",
+        "text": "Fictional declarations: renters Coverage C is active for the insured personal belongings at this occupied primary residence at the time of loss. Selected form terms below govern this benchmark; no other modifying endorsement is assumed. ",
+        "source_section": "Fictional case assumption — not an insurer-issued declaration"
+      },
+      {
+        "id": "CA-HO4-WATER-CONTENTS",
+        "text": "Accidental discharge from a plumbing system or household appliance is a listed peril for covered personal property. The leaking system or appliance itself is not covered by this peril; other listed restrictions still apply.",
+        "source_section": "HO 00 04 05 11 — Section I, Perils Insured Against 12",
+        "source_url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf"
+      }
+    ],
+    "policy_source": {
+      "title": "Goodcover California renters sample, HO 00 04 05 11 and listed endorsements",
+      "url": "https://www.goodcover.com/files/sample-policies/california/policy-sample.pdf",
+      "note": "Public software-testing sample explicitly marked not a valid insurance policy. Selected real form provisions are paraphrased for synthetic cases; declarations and endorsement applicability below are fictional assumptions, not insurer-issued coverage."
+    },
+    "claimant_facts": {
+      "insured_item": "Fictional renter’s personal belongings",
+      "incident": "A supply pipe suddenly burst while I was home and soaked my own books, rug and fabric chair. I saw water spraying from the broken pipe.",
+      "damage": "Books are swollen and wet, the rug is saturated, and the chair upholstery has water stains.",
+      "other_facts": "I shut off the water and reported it immediately. No freezing, mold, external flood or gradual seepage was involved. I claim only my belongings, not pipe repair or building damage."
+    },
+    "expected": {
+      "verdict": "covered",
+      "clause_ids": [
+        "CA-HO4-WATER-CONTENTS"
+      ],
+      "rationale": "Direct damage to covered belongings from the stated sudden plumbing discharge meets the selected peril; the leaking pipe itself is not claimed."
+    },
+    "challenge": "Contents versus excluded pipe repair; photo does not establish cause"
+  }
+]

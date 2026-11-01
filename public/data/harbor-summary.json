@@ -1,0 +1,103 @@
+{
+  "status": "completed",
+  "mode": "Luna Decisions API saved-verdict replay",
+  "model": "gpt-6-luna",
+  "endpoint": "/v1/decisions",
+  "note": "Scores saved Luna Decisions API verdicts against expected labels; it does not run inference or score Astra explanations.",
+  "passed": 10,
+  "total": 15,
+  "score": 0.6666666666666666,
+  "tasks": [
+    {
+      "id": "auto-collision",
+      "reward": 1.0,
+      "verdict": "covered",
+      "expected": "covered"
+    },
+    {
+      "id": "auto-flood",
+      "reward": 0.0,
+      "verdict": "needs_review",
+      "expected": "covered"
+    },
+    {
+      "id": "auto-vandalism",
+      "reward": 1.0,
+      "verdict": "needs_review",
+      "expected": "needs_review"
+    },
+    {
+      "id": "home-stolen-laptop",
+      "reward": 1.0,
+      "verdict": "needs_review",
+      "expected": "needs_review"
+    },
+    {
+      "id": "home-delayed-claim",
+      "reward": 1.0,
+      "verdict": "needs_review",
+      "expected": "needs_review"
+    },
+    {
+      "id": "auto-animal-contact",
+      "reward": 1.0,
+      "verdict": "covered",
+      "expected": "covered"
+    },
+    {
+      "id": "auto-animal-swerve",
+      "reward": 0.0,
+      "verdict": "needs_review",
+      "expected": "excluded"
+    },
+    {
+      "id": "auto-owner-intent",
+      "reward": 0.0,
+      "verdict": "needs_review",
+      "expected": "excluded"
+    },
+    {
+      "id": "auto-disputed-actor",
+      "reward": 1.0,
+      "verdict": "needs_review",
+      "expected": "needs_review"
+    },
+    {
+      "id": "auto-business-no-surcharge",
+      "reward": 0.0,
+      "verdict": "needs_review",
+      "expected": "excluded"
+    },
+    {
+      "id": "auto-business-surcharge",
+      "reward": 0.0,
+      "verdict": "needs_review",
+      "expected": "covered"
+    },
+    {
+      "id": "property-laptop-surge",
+      "reward": 1.0,
+      "verdict": "excluded",
+      "expected": "excluded"
+    },
+    {
+      "id": "property-burst-pipe-belongings",
+      "reward": 1.0,
+      "verdict": "covered",
+      "expected": "covered"
+    },
+    {
+      "id": "property-smoke-uncertain",
+      "reward": 1.0,
+      "verdict": "needs_review",
+      "expected": "needs_review"
+    },
+    {
+      "id": "property-forced-entry-report-unknown",
+      "reward": 1.0,
+      "verdict": "needs_review",
+      "expected": "needs_review"
+    }
+  ],
+  "error": null
+}
