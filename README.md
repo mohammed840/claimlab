@@ -150,9 +150,3 @@ This requires all 15 saved cases, stages the refresh, and switches the dashboard
 - Prepared this reproducible saved demo, per-case results, sample fixtures and evaluation commands.
 
 **Concrete Codex contribution:** Codex implemented the Realtime WebSocket migration and staged voice-refresh command, added focused protocol checks, then used the authorized API run to generate the media. Wording validation rejected a paraphrased camera-theft sentence; the clip was regenerated without altering the evidence or benchmark outcomes.
-
-## Limits and intended use
-
-This is a prototype for supporting human review, not for making binding insurance decisions. All claims, declarations and images are synthetic. Expected outcomes are authored, not expert-adjudicated ground truth. The sample policies are incomplete/historical examples, and applicable endorsements are scenario assumptions. There is one rollout, no held-out set, no statistical uncertainty estimate and no confidence calibration. The benchmark evaluates the combined evidence-collection/retrieval/vision/decision workflow, not Luna in isolation.
-
-[ClaimBench by Vals AI](https://www.vals.ai/benchmarks/claimbench) inspired fixed labels, evidence-based judgments and insufficient-evidence cases. It evaluates financial filings; ClaimLab is neither its dataset nor an insurance adaptation with comparable scores.
