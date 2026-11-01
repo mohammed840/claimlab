@@ -8,7 +8,19 @@ Built for claims reviewers and AI developers who need to understand why a workfl
 
 The saved demo runs without an API key. Its current Decisions API results match **10/15 expected labels (66.7%)**. This is a small workflow evaluation, not a production accuracy claim.
 
-![Synthetic collision example](public/media/auto-collision/claim_122c68ae41.png)
+## Watch a claim unfold
+
+**A broken lock. A missing camera. Is that enough to approve the claim?**
+
+Hear the claimant report the loss, follow Astra’s questions, and see why the case still needs review.
+
+**[▶ Watch the full conversation](public/media/property-forced-entry-report-unknown/v4-realtime/conversation.mp4)** · 60 seconds · six turns · AI voices and captioned video
+
+**[Read the complete conversation and benchmark outcome](docs/FEATURED_CONVERSATION.md)**
+
+[![Open the recorded damaged-lock claim](public/media/property-forced-entry-report-unknown/claim_25032a4466.png)](public/media/property-forced-entry-report-unknown/v4-realtime/conversation.mp4)
+
+*Actual saved demo dialogue, synthetic scenario. If GitHub does not preview the video, select View raw or download it.*
 
 ## Try the saved demo
 
